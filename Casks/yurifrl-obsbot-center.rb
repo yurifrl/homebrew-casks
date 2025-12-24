@@ -7,10 +7,13 @@ cask "yurifrl-obsbot-center" do
     require "json"
     require "uri"
 
+    fallback_url = "https://resource-cdn.obsbothk.com/download/obsbot-center/Obsbot_Center_OA_E_MacOS_Apple_2.0.13.28_release.dmg"
+
     begin
       website_uri = URI("https://www.obsbot.com/download/obsbot-tiny-2")
       http = Net::HTTP.new(website_uri.host, website_uri.port)
       http.use_ssl = true
+      http.read_timeout = 10
       response = http.get(website_uri.path)
 
       latest_version = response.body.match(/macOS v([\d.]+)/)&.captures&.first || "2.0.13.28"
@@ -19,16 +22,22 @@ cask "yurifrl-obsbot-center" do
       api_uri = URI("https://remo-api.obsbot.com/fms/v1/files/cdn/authorization")
       http = Net::HTTP.new(api_uri.host, api_uri.port)
       http.use_ssl = true
+      http.read_timeout = 10
 
       request = Net::HTTP::Post.new(api_uri.path)
       request["Content-Type"] = "application/json"
       request.body = { url: base_url }.to_json
 
       response = http.request(request)
-      result = JSON.parse(response.body)
-      result["url"] || base_url
+      if response.code == "200"
+        result = JSON.parse(response.body)
+        api_url = result["url"]
+        api_url.to_s.empty? ? base_url : api_url
+      else
+        base_url
+      end
     rescue
-      "https://resource-cdn.obsbothk.com/download/obsbot-center/Obsbot_Center_OA_E_MacOS_Apple_2.0.13.28_release.dmg"
+      fallback_url
     end
   end
   name "Obsbot Center"
