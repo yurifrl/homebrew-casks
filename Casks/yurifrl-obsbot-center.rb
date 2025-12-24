@@ -17,7 +17,7 @@ cask "yurifrl-obsbot-center" do
     latest_version = response.body.match(/macOS v([\d.]+)/)&.captures&.first || "2.0.13.28"
 
     # Get CDN URL with timestamp/hash
-    base_url = "https://resource-cdn.obsbothk.com/download/obsbot-center/Obsbot_Center_OA_E_MacOS_Intel_#{latest_version}_release.dmg"
+    base_url = "https://resource-cdn.obsbothk.com/download/obsbot-center/Obsbot_Center_OA_E_MacOS_Apple_#{latest_version}_release.dmg"
     api_uri = URI("https://remo-api.obsbot.com/fms/v1/files/cdn/authorization")
 
     http = Net::HTTP.new(api_uri.host, api_uri.port)
