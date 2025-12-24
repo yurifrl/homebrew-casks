@@ -8,6 +8,7 @@ cask "yurifrl-obsbot-center" do
     require "uri"
 
     fallback_url = "https://resource-cdn.obsbothk.com/download/obsbot-center/Obsbot_Center_OA_E_MacOS_Apple_2.0.13.28_release.dmg"
+    result_url = fallback_url
 
     begin
       website_uri = URI("https://www.obsbot.com/download/obsbot-tiny-2")
@@ -32,13 +33,15 @@ cask "yurifrl-obsbot-center" do
       if response.code == "200"
         result = JSON.parse(response.body)
         api_url = result["url"]
-        (api_url && !api_url.to_s.empty?) ? api_url : base_url
+        result_url = (api_url && !api_url.to_s.empty?) ? api_url.to_s : base_url
       else
-        base_url
+        result_url = base_url
       end
     rescue => e
-      fallback_url
+      result_url = fallback_url
     end
+
+    result_url.to_s
   end
   name "Obsbot Center"
   desc "Control center for Obsbot webcams"
