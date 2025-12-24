@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "container",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--mount",
+        "type=bind,src=/Users/yuri/Workdir,dst=/projects/workspace",
+        "mcp/filesystem",
+        "/projects"
+      ],
+      "env": {}
+    }
+  }
+}
