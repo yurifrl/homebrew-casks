@@ -15,6 +15,7 @@ brew tap yurifrl/casks
 ```bash
 brew install --cask yurifrl-amphetamine-power-protect
 brew install --cask yurifrl-obsbot-center
+brew install --cask yurifrl-toggle-mute
 ```
 
 ### Using Brewfile
@@ -25,6 +26,7 @@ Add to your `Brewfile`:
 tap "yurifrl/casks"
 cask "yurifrl-amphetamine-power-protect"
 cask "yurifrl-obsbot-center"
+cask "yurifrl-toggle-mute"
 ```
 
 Then run:
@@ -47,6 +49,12 @@ Plugin that prevents Mac from sleeping while on power. Requires Amphetamine from
 Control center for Obsbot webcams. Automatically fetches the latest version from OBSBOT's CDN.
 
 - **Homepage:** https://www.obsbot.com/
+
+### yurifrl-toggle-mute
+
+Menu bar app to mute/unmute the default microphone. Versioned releases, notarized DMG.
+
+- **Homepage:** https://github.com/yurifrl/toggleMute
 
 ## Development
 
