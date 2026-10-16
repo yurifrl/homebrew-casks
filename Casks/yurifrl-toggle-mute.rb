@@ -1,6 +1,6 @@
 cask "yurifrl-toggle-mute" do
-  version "1.6"
-  sha256 "61d8c8a5464b5a16334806b2d411f9144ce273320124b832769cb82fed9ef21e"
+  version "1.6.1"
+  sha256 "47140269752e12305a1d69185ecd10ba5421df1c26d5b525e0245e78456f895f"
 
   url "https://github.com/yurifrl/toggleMute/releases/download/v#{version}/toggleMute-#{version}.dmg"
   name "toggleMute"
