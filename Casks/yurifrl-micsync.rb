@@ -1,6 +1,6 @@
 cask "yurifrl-micsync" do
-  version "1.0.4"
-  sha256 "2eb347cdfaa3de8bcdc4ec52210bdee893bb6c604826a07ba97a297da609391f"
+  version "1.0.5"
+  sha256 "9dfce782a2653d80ee45f21946509cc364e2851fac063c4b11a238a6a841ec0c"
 
   url "https://github.com/yurifrl/MicSync/releases/download/v#{version}/MicSync-#{version}.dmg"
   name "MicSync"
