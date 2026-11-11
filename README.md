@@ -16,6 +16,8 @@ brew tap yurifrl/casks
 brew install --cask yurifrl-amphetamine-power-protect
 brew install --cask yurifrl-obsbot-center
 brew install --cask yurifrl-toggle-mute
+brew install --cask yurifrl-alt-tab          # pinned to the latest tagged release
+brew install --cask yurifrl-alt-tab@latest   # always the newest GitHub release
 ```
 
 ### Using Brewfile
@@ -27,6 +29,7 @@ tap "yurifrl/casks"
 cask "yurifrl-amphetamine-power-protect"
 cask "yurifrl-obsbot-center"
 cask "yurifrl-toggle-mute"
+cask "yurifrl-alt-tab"
 ```
 
 Then run:
@@ -55,6 +58,12 @@ Control center for Obsbot webcams. Automatically fetches the latest version from
 Menu bar app to mute/unmute the default microphone. Versioned releases, notarized DMG.
 
 - **Homepage:** https://github.com/yurifrl/toggleMute
+
+### yurifrl-alt-tab / yurifrl-alt-tab@latest
+
+Keyboard-driven window switcher. Signed and notarized DMG. `yurifrl-alt-tab` is pinned to a version (bumped automatically on each release); `yurifrl-alt-tab@latest` is unversioned and always installs the newest GitHub release (refresh with `brew upgrade --cask --greedy yurifrl-alt-tab@latest`). The two conflict, install only one.
+
+- **Homepage:** https://github.com/yurifrl/alt-tab
 
 ## Development
 
