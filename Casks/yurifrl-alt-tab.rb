@@ -1,6 +1,6 @@
 cask "yurifrl-alt-tab" do
-  version "0.2.1"
-  sha256 "31f9dc40c5fc170ebe7c0758243c30900ca1d99058f5b87301611096c529367c"
+  version "0.2.2"
+  sha256 "55d4f9028eaf948c67fb8078f2339a8c64b9bc493c0e0ed6eeb666c04742e0b3"
   auto_updates true
 
   url "https://github.com/yurifrl/alt-tab/releases/download/v#{version}/AltTab.dmg"
