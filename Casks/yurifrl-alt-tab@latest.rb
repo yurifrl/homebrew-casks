@@ -8,6 +8,7 @@ cask "yurifrl-alt-tab@latest" do
   homepage "https://github.com/yurifrl/alt-tab"
 
   conflicts_with cask: "yurifrl-alt-tab"
+  conflicts_with cask: "yurifrl-alt-tab@nightly"
   depends_on macos: :monterey
 
   app "AltTab.app"
